@@ -337,3 +337,208 @@
 <body>
 
   <!-- Header -->
+  <header class="header">
+    <div class="time-badge">
+      <span id="clock">00:00:00</span> ⛅
+    </div>
+    <!-- Nút 3 gạch mở Menu Sidebar -->
+    <button class="menu-btn" id="openMenu" title="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Sidebar Menu (Modal 3 gạch) -->
+  <div class="sidebar-overlay" id="sidebarOverlay">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-profile">
+          <div class="sidebar-avatar">
+            <img src="avatar.png" alt="Avatar">
+          </div>
+          <div class="sidebar-user-info">
+            <h4>Nguyen Bang MOD</h4>
+            <p>Developer & Modder</p>
+          </div>
+        </div>
+        <button class="close-btn" id="closeMenu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="sidebar-menu">
+        <a href="#" class="sidebar-item">
+          <i class="fa-solid fa-user"></i> About
+        </a>
+        <!-- Nút Tải Game trong menu 3 gạch bấm vào sẽ trượt thẳng đến phần danh sách game -->
+        <a href="#game-list" class="sidebar-item active" id="menuTảiGame">
+          <i class="fa-solid fa-gamepad"></i> Tải Game
+        </a>
+        <a href="#" class="sidebar-item">
+          <i class="fa-solid fa-key"></i> Get Key
+        </a>
+        <a href="#" class="sidebar-item">
+          <i class="fa-solid fa-file-code"></i> File Mod
+        </a>
+        <a href="#" class="sidebar-item">
+          <i class="fa-solid fa-video"></i> Video Hướng Dẫn
+        </a>
+        <a href="#" class="sidebar-item">
+          <i class="fa-solid fa-comments"></i> Contact
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Section -->
+  <main class="profile-card">
+    <div class="avatar-wrapper">
+      <img src="avatar.png" alt="Nguyen Bang Avatar">
+    </div>
+
+    <div class="sub-tag">Nguyen Bang 👑</div>
+    <div class="greeting">Hi, I am</div>
+    <h1 class="name">Nguyen Bang 👑 <i class="fa-solid fa-circle-check badge-check"></i></h1>
+    
+    <div id="game-list" class="explore-text">
+      Danh sách Menu 👇
+    </div>
+  </main>
+
+  <!-- Navigation Grid / Menu Links -->
+  <div class="nav-container">
+    <!-- 1. Menu Liên Quân -->
+    <a href="https://bokoten09.github.io/menu-li-n-qu-n/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-lq">
+          <i class="fa-solid fa-gamepad"></i>
+        </div>
+        <div class="card-text">
+          <h3>Menu Liên Quân</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 2. Menu Free Fire -->
+    <a href="https://bokoten09.github.io/menu-free-fire/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-ff">
+          <i class="fa-solid fa-fire"></i>
+        </div>
+        <div class="card-text">
+          <h3>Menu Free Fire</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 3. FC Mobile -->
+    <a href="https://bokoten09.github.io/fc-mobile/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-fc">
+          <i class="fa-solid fa-futbol"></i>
+        </div>
+        <div class="card-text">
+          <h3>FC Mobile</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 4. Menu PUBG Mobile -->
+    <a href="https://bokoten09.github.io/menu-pubg/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-pubg">
+          <i class="fa-solid fa-crosshairs"></i>
+        </div>
+        <div class="card-text">
+          <h3>Menu PUBG Mobile</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 5. Menu Play Together -->
+    <a href="https://bokoten09.github.io/menu-play-together/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-play">
+          <i class="fa-solid fa-earth-americas"></i>
+        </div>
+        <div class="card-text">
+          <h3>Menu Play Together</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 6. Menu Tốc Chiến (LMHT) -->
+    <a href="https://bokoten09.github.io/menu-t-c-chi-n-LMHT-/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-tocchien">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="card-text">
+          <h3>Menu Tốc Chiến (LMHT)</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+
+    <!-- 7. ProxyDeck -->
+    <a href="https://bokoten09.github.io/proxydeck/" class="nav-card">
+      <div class="card-info">
+        <div class="card-icon icon-proxy">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <div class="card-text">
+          <h3>ProxyDeck</h3>
+        </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+  </div>
+
+  <footer>
+    Nguyen Bang 👑 System &copy; 2026
+  </footer>
+
+  <!-- JS Logic -->
+  <script>
+    // Đồng hồ thời gian thực
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Xử lý bật/tắt Sidebar 3 gạch
+    const openMenuBtn = document.getElementById('openMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const menuTảiGame = document.getElementById('menuTảiGame');
+
+    openMenuBtn.addEventListener('click', () => {
+      sidebarOverlay.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      sidebarOverlay.classList.remove('active');
+    });
+
+    sidebarOverlay.addEventListener('click', (e) => {
+      if (e.target === sidebarOverlay) {
+        sidebarOverlay.classList.remove('active');
+      }
+    });
+
+    // Khi ấn vào mục "Tải Game" trong menu 3 gạch thì tự động đóng menu lại và cuộn mượt lên phần danh sách game
+    menuTảiGame.addEventListener('click', () => {
+      sidebarOverlay.classList.remove('active');
+    });
+  </script>
+</body>
+</html>

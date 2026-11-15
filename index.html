@@ -210,7 +210,7 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .badge-check {
@@ -218,38 +218,51 @@
       font-size: 22px;
     }
 
-    /* Khu vực Icon Mạng xã hội giữa Tên và Danh sách Menu */
+    /* Khu vực Icon Mạng xã hội kèm chữ chú thích */
     .social-links-container {
       display: flex;
       justify-content: center;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .social-item {
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
+      gap: 6px;
+      text-decoration: none;
     }
 
     .social-btn {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: grid;
       place-items: center;
       font-size: 20px;
       color: #ffffff;
-      text-decoration: none;
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .social-btn:hover {
+    .social-item:hover .social-btn {
       transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
 
-    /* Icon TikTok & Zalo Stylings */
+    .social-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #636e72;
+    }
+
+    /* Màu sắc riêng cho từng icon */
     .btn-tiktok-1 { background: #000000; }
     .btn-tiktok-2 { background: linear-gradient(45deg, #00f2fe, #fe0979); }
-    .btn-zalo-1 { background: #0068ff; font-weight: 800; font-size: 13px; }
-    .btn-zalo-2 { background: #0084ff; font-weight: 800; font-size: 13px; }
+    .btn-zalo-1 { background: #0068ff; font-weight: 800; font-size: 12px; }
+    .btn-zalo-2 { background: #0084ff; font-weight: 800; font-size: 12px; }
 
     .explore-text {
       color: #b2bec3;
@@ -343,7 +356,7 @@
     </button>
   </header>
 
-  <!-- Sidebar Menu (Modal 3 gạch) -->
+  <!-- Sidebar Menu (Menu 3 gạch) -->
   <div class="sidebar-overlay" id="sidebarOverlay">
     <div class="sidebar">
       <div class="sidebar-header">
@@ -360,8 +373,6 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
-
-      <!-- Đã dọn dẹp bỏ sạch các mục thừa theo yêu cầu -->
     </div>
   </div>
 
@@ -375,26 +386,38 @@
     <div class="greeting">Hi, I am</div>
     <h1 class="name">Nguyen Bang 👑 <i class="fa-solid fa-circle-check badge-check"></i></h1>
     
-    <!-- 4 ICON TikTok & Zalo Nằm giữa Tên và Danh sách Menu -->
+    <!-- 4 ICON Mạng xã hội + Chú thích -->
     <div class="social-links-container">
-      <!-- TikTok 1 -->
-      <a href="THAY_LINK_TIKTOK_1_O_DAY" target="_blank" rel="noopener noreferrer" class="social-btn btn-tiktok-1" title="TikTok 1">
-        <i class="fa-brands fa-tiktok"></i>
+      <!-- 1. Acc chính (TikTok) -->
+      <a href="THAY_LINK_ACC_CHINH_O_DAY" target="_blank" rel="noopener noreferrer" class="social-item">
+        <div class="social-btn btn-tiktok-1">
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <span class="social-label">Acc chính</span>
       </a>
       
-      <!-- TikTok 2 -->
-      <a href="THAY_LINK_TIKTOK_2_O_DAY" target="_blank" rel="noopener noreferrer" class="social-btn btn-tiktok-2" title="TikTok 2">
-        <i class="fa-brands fa-tiktok"></i>
+      <!-- 2. Acc phụ (TikTok) -->
+      <a href="THAY_LINK_ACC_PHU_O_DAY" target="_blank" rel="noopener noreferrer" class="social-item">
+        <div class="social-btn btn-tiktok-2">
+          <i class="fa-brands fa-tiktok"></i>
+        </div>
+        <span class="social-label">Acc phụ</span>
       </a>
 
-      <!-- Zalo 1 -->
-      <a href="THAY_LINK_ZALO_1_O_DAY" target="_blank" rel="noopener noreferrer" class="social-btn btn-zalo-1" title="Zalo 1">
-        Zalo
+      <!-- 3. Nhóm của tôi (Zalo) -->
+      <a href="THAY_LINK_NHOM_ZALO_O_DAY" target="_blank" rel="noopener noreferrer" class="social-item">
+        <div class="social-btn btn-zalo-1">
+          Zalo
+        </div>
+        <span class="social-label">Nhóm của tôi</span>
       </a>
 
-      <!-- Zalo 2 -->
-      <a href="THAY_LINK_ZALO_2_O_DAY" target="_blank" rel="noopener noreferrer" class="social-btn btn-zalo-2" title="Zalo 2">
-        Zalo
+      <!-- 4. Zalo của tôi -->
+      <a href="THAY_LINK_ZALO_CA_NHAN_O_DAY" target="_blank" rel="noopener noreferrer" class="social-item">
+        <div class="social-btn btn-zalo-2">
+          Zalo
+        </div>
+        <span class="social-label">Zalo của tôi</span>
       </a>
     </div>
 

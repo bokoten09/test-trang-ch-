@@ -14,7 +14,7 @@
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      scroll-behavior: smooth; /* Hiệu ứng cuộn mượt mà khi ấn nút */
+      scroll-behavior: smooth;
     }
 
     body {
@@ -64,6 +64,137 @@
       cursor: pointer;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       color: #2c3e50;
+      transition: background 0.2s;
+    }
+
+    .menu-btn:hover {
+      background: #f1f2f6;
+    }
+
+    /* Sidebar Modal (Menu 3 gạch) */
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+      display: none;
+      justify-content: flex-end;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .sidebar-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .sidebar {
+      width: 300px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-overlay.active .sidebar {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e1e8ed;
+    }
+
+    .sidebar-profile {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sidebar-avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #0984e3;
+    }
+
+    .sidebar-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sidebar-user-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2d3436;
+    }
+
+    .sidebar-user-info p {
+      font-size: 12px;
+      color: #b2bec3;
+    }
+
+    .close-btn {
+      background: #f1f2f6;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #2c3e50;
+      font-size: 16px;
+    }
+
+    .sidebar-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-grow: 1;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #2d3436;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .sidebar-item i {
+      font-size: 18px;
+      color: #636e72;
+      width: 24px;
+      text-align: center;
+    }
+
+    .sidebar-item:hover, .sidebar-item.active {
+      background: #f1f2f6;
+      color: #0984e3;
+    }
+
+    .sidebar-item:hover i, .sidebar-item.active i {
+      color: #0984e3;
     }
 
     /* Profile Header */
@@ -116,35 +247,12 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
     }
 
     .badge-check {
       color: #0095f6;
       font-size: 22px;
-    }
-
-    /* Nút Tải Game / Tải Menu ở dưới tên */
-    .download-action-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffffff;
-      border: 1.5px solid #0984e3;
-      color: #0984e3;
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      margin-bottom: 16px;
-      transition: all 0.2s;
-    }
-
-    .download-action-btn:hover {
-      background: #0984e3;
-      color: #ffffff;
     }
 
     .explore-text {
@@ -229,145 +337,3 @@
 <body>
 
   <!-- Header -->
-  <header class="header">
-    <div class="time-badge">
-      <span id="clock">00:00:00</span> ⛅
-    </div>
-    <button class="menu-btn" title="Menu">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-  </header>
-
-  <!-- Profile Section -->
-  <main class="profile-card">
-    <div class="avatar-wrapper">
-      <img src="avatar.png" alt="Nguyen Bang Avatar">
-    </div>
-
-    <div class="sub-tag">Nguyen Bang 👑</div>
-    <div class="greeting">Hi, I am</div>
-    <h1 class="name">Nguyen Bang 👑 <i class="fa-solid fa-circle-check badge-check"></i></h1>
-    
-    <!-- Nút Tải Game dẫn thẳng tới danh sách menu -->
-    <a href="#game-list" class="download-action-btn">
-      <i class="fa-solid fa-gamepad"></i> TẢI GAME
-    </a>
-
-    <div id="game-list" class="explore-text">
-      Danh sách Menu 👇
-    </div>
-  </main>
-
-  <!-- Navigation Grid / Menu Links -->
-  <div class="nav-container">
-    <!-- 1. Menu Liên Quân -->
-    <a href="https://bokoten09.github.io/menu-li-n-qu-n/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-lq">
-          <i class="fa-solid fa-gamepad"></i>
-        </div>
-        <div class="card-text">
-          <h3>Menu Liên Quân</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 2. Menu Free Fire -->
-    <a href="https://bokoten09.github.io/menu-free-fire/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-ff">
-          <i class="fa-solid fa-fire"></i>
-        </div>
-        <div class="card-text">
-          <h3>Menu Free Fire</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 3. FC Mobile -->
-    <a href="https://bokoten09.github.io/fc-mobile/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-fc">
-          <i class="fa-solid fa-futbol"></i>
-        </div>
-        <div class="card-text">
-          <h3>FC Mobile</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 4. Menu PUBG Mobile -->
-    <a href="https://bokoten09.github.io/menu-pubg/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-pubg">
-          <i class="fa-solid fa-crosshairs"></i>
-        </div>
-        <div class="card-text">
-          <h3>Menu PUBG Mobile</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 5. Menu Play Together -->
-    <a href="https://bokoten09.github.io/menu-play-together/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-play">
-          <i class="fa-solid fa-earth-americas"></i>
-        </div>
-        <div class="card-text">
-          <h3>Menu Play Together</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 6. Menu Tốc Chiến (LMHT) -->
-    <a href="https://bokoten09.github.io/menu-t-c-chi-n-LMHT-/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-tocchien">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <div class="card-text">
-          <h3>Menu Tốc Chiến (LMHT)</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-
-    <!-- 7. ProxyDeck -->
-    <a href="https://bokoten09.github.io/proxydeck/" class="nav-card">
-      <div class="card-info">
-        <div class="card-icon icon-proxy">
-          <i class="fa-solid fa-bolt"></i>
-        </div>
-        <div class="card-text">
-          <h3>ProxyDeck</h3>
-        </div>
-      </div>
-      <i class="fa-solid fa-chevron-right arrow-btn"></i>
-    </a>
-  </div>
-
-  <footer>
-    Nguyen Bang 👑 System &copy; 2026
-  </footer>
-
-  <!-- JS Logic -->
-  <script>
-    // Đồng hồ thời gian thực
-    function updateClock() {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-  </script>
-</body>
-</html>

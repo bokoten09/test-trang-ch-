@@ -522,3 +522,46 @@
         <div class="card-text">
           <h3>ProxyDeck</h3>
         </div>
+      </div>
+      <i class="fa-solid fa-chevron-right arrow-btn"></i>
+    </a>
+  </div>
+
+  <footer>
+    Nguyen Bang 👑 System &copy; 2026
+  </footer>
+
+  <!-- JS Logic -->
+  <script>
+    // Đồng hồ thời gian thực
+    function updateClock() {
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Xử lý bật/tắt Sidebar 3 gạch
+    const openMenuBtn = document.getElementById('openMenu');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    openMenuBtn.addEventListener('click', () => {
+      sidebarOverlay.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      sidebarOverlay.classList.remove('active');
+    });
+
+    sidebarOverlay.addEventListener('click', (e) => {
+      if (e.target === sidebarOverlay) {
+        sidebarOverlay.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
